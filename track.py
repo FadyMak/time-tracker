@@ -5,7 +5,7 @@ import json
 
 RESOLUTION = 3
 GET_WINDOW_EXEC = 'get_window.exe'
-WRITE_INTERVAL = 3 # write to file every WRITE_INTERVAL * RESOLUTION seconds
+WRITE_INTERVAL = 10 # write to file every WRITE_INTERVAL * RESOLUTION seconds
 STATS_FILE = 'stats.json'
 
 def main ():
