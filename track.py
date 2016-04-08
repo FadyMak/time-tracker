@@ -1,6 +1,5 @@
 import time
 import subprocess
-from collections import Counter
 import json
 import ctypes
 
@@ -12,6 +11,9 @@ STATS_FILE = 'stats.json'
 
 def main ():
 	windows = {}
+	with open(STATS_FILE, 'r') as f:
+		windows = json.load(f)
+	
 	iteration = 0
 	
 	while True:
@@ -21,15 +23,9 @@ def main ():
 		else:
 			windows[window_title] = RESOLUTION
 				
-		if iteration == WRITE_INTERVAL:
-			with open(STATS_FILE, 'r') as f:
-				old_stats = Counter(json.load(f))
-				new_stats = Counter(windows)
-				merged_stats = old_stats + new_stats
-			
+		if iteration == WRITE_INTERVAL:			
 			with open(STATS_FILE, 'w') as f:
-				merged_stats_json = json.dumps(merged_stats, indent=4)
-				f.write(merged_stats_json)
+				f.write(json.dumps(windows, indent=4))
 			
 			iteration = 0
 		else:
