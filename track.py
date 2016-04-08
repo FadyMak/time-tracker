@@ -28,7 +28,7 @@ def main ():
 				merged_stats = old_stats + new_stats
 			
 			with open(STATS_FILE, 'w') as f:
-				merged_stats_json = json.dumps(merged_stats)
+				merged_stats_json = json.dumps(merged_stats, indent=4)
 				f.write(merged_stats_json)
 			
 			iteration = 0
