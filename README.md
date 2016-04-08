@@ -2,9 +2,9 @@
 Track the amount of time spent using each application
 
 ### Requirements
-Python 3
-GCC
-Windows 2000 or greater (unfortunately it's Windows-only for now, looking to expand it to Linux and OS X)
+- Python 3
+- GCC
+- Windows 2000 or greater (unfortunately it's Windows-only for now, looking to expand it to Linux and OS X)
 
 ### Get it up and running
 
